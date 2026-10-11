@@ -1,0 +1,15 @@
+# Configuração do clangd para tudo dentro de ~/cp
+# (gerado pelo install.sh do cp-env)
+If:
+  PathMatch: .*\.(cpp|cc|cxx|h|hpp)
+CompileFlags:
+  Add: [-xc++, -std=gnu++20, -DLOCAL, -I/home/danielfilipe/Code_Problems/include, -Wall, -Wextra, -Wshadow]
+---
+If:
+  PathMatch: .*\.c
+CompileFlags:
+  Add: [-xc, -std=gnu17, -DLOCAL, -Wall, -Wextra]
+---
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
